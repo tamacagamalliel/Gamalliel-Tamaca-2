@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0B0C0E"/>
+  <circle cx="980" cy="120" r="220" fill="#C2410C" fill-opacity="0.18"/>
+  <circle cx="180" cy="520" r="260" fill="#0F766E" fill-opacity="0.16"/>
+  <text x="80" y="160" fill="#2DD4BF" font-family="IBM Plex Mono, monospace" font-size="28" letter-spacing="6">PORTFOLIO</text>
+  <text x="80" y="280" fill="#EDEFF2" font-family="Bricolage Grotesque, Segoe UI, sans-serif" font-size="72" font-weight="700">Gamalliel Tamaca</text>
+  <text x="80" y="360" fill="#FB923C" font-family="Bricolage Grotesque, Segoe UI, sans-serif" font-size="42" font-weight="650">IT Support Engineer · Web Developer</text>
+  <text x="80" y="430" fill="#9AA3B2" font-family="Bricolage Grotesque, Segoe UI, sans-serif" font-size="28">Practical systems. Real operations. Shipped work.</text>
+</svg>
