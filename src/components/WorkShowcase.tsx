@@ -23,8 +23,11 @@ export function WorkShowcase({ reducedMotion = false }: Props) {
     if (!root) return
 
     const layers = Array.from(root.querySelectorAll<HTMLElement>('[data-depth]'))
+    const canParallax = () =>
+      window.matchMedia('(min-width: 980px) and (hover: hover) and (pointer: fine)').matches
 
     const onMove = (e: PointerEvent) => {
+      if (!canParallax()) return
       const rect = root.getBoundingClientRect()
       const x = (e.clientX - rect.left) / rect.width - 0.5
       const y = (e.clientY - rect.top) / rect.height - 0.5

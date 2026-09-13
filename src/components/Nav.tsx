@@ -6,8 +6,6 @@ type Props = {
   preference: ThemePreference
   onCycleTheme: () => void
   onOpenCommand: () => void
-  resumeMode: boolean
-  onToggleResumeMode: () => void
 }
 
 const links = [
@@ -18,16 +16,8 @@ const links = [
   { href: '#contact', label: 'Contact' },
 ]
 
-export function Nav({
-  preference,
-  onCycleTheme,
-  onOpenCommand,
-  resumeMode,
-  onToggleResumeMode,
-}: Props) {
+export function Nav({ preference, onCycleTheme, onOpenCommand }: Props) {
   const [open, setOpen] = useState(false)
-  const isMac =
-    typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || '')
 
   useEffect(() => {
     if (!open) return
@@ -59,18 +49,7 @@ export function Nav({
         </ul>
         <div className="nav-actions">
           <button type="button" className="kbd-hint" onClick={onOpenCommand} aria-label="Open command palette">
-            Search <kbd>{isMac ? '⌘' : 'Ctrl'}</kbd>
-            <kbd>K</kbd>
-          </button>
-          <button
-            type="button"
-            className="icon-btn nav-hide-sm"
-            onClick={onToggleResumeMode}
-            aria-pressed={resumeMode}
-            title="Resume mode"
-            aria-label="Toggle resume mode"
-          >
-            CV
+            Search
           </button>
           <button
             type="button"
@@ -81,9 +60,6 @@ export function Nav({
           >
             {preference === 'dark' ? '☾' : preference === 'light' ? '☀' : '◐'}
           </button>
-          <a className="btn btn-primary nav-cv-btn" href={site.cvPath}>
-            CV
-          </a>
           <button
             type="button"
             className="icon-btn nav-burger"
@@ -111,7 +87,7 @@ export function Nav({
             Download CV
           </a>
           <button type="button" className="btn btn-ghost" onClick={onOpenCommand}>
-            Search (Ctrl/⌘ K)
+            Search
           </button>
         </div>
       ) : null}

@@ -27,7 +27,6 @@ const slideshowMap: Record<string, string[]> = {
   ],
   'netbank-dashboard': [
     '/previews/netbank-login.jpg',
-    '/previews/netbank-login-mobile.jpg',
   ],
 }
 

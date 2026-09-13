@@ -18,7 +18,6 @@ export default function App() {
   const [cmdOpen, setCmdOpen] = useState(false)
   const [activeProject, setActiveProject] = useState<string | null>(null)
   const [selectedSkill, setSelectedSkill] = useState<SkillId | null>(null)
-  const [resumeMode, setResumeMode] = useState(false)
   const [reducedMotion, setReducedMotion] = useState(false)
 
   useEffect(() => {
@@ -28,10 +27,6 @@ export default function App() {
     mq.addEventListener('change', onChange)
     return () => mq.removeEventListener('change', onChange)
   }, [])
-
-  useEffect(() => {
-    document.body.dataset.resumeMode = resumeMode ? 'true' : 'false'
-  }, [resumeMode])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -60,8 +55,6 @@ export default function App() {
         preference={preference}
         onCycleTheme={cycle}
         onOpenCommand={() => setCmdOpen(true)}
-        resumeMode={resumeMode}
-        onToggleResumeMode={() => setResumeMode((v) => !v)}
       />
       <Marquee />
       <main>
