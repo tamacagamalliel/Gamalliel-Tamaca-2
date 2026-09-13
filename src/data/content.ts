@@ -9,7 +9,7 @@ export const site = {
   email: 'tamacagamalliel@gmail.com',
   phone: '+63 950 859 7405',
   location: 'Quezon City, Philippines',
-  linkedin: '', // add when available: https://linkedin.com/in/...
+  linkedin: 'https://www.linkedin.com/in/gamalliel-tamaca-540aba332/',
   github: '', // add when available
   cvPath: '/resume',
 } as const
