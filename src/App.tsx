@@ -40,6 +40,15 @@ export default function App() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  useEffect(() => {
+    // One quiet developer easter egg — discoverable in DevTools only.
+    console.log(
+      '%cGamalliel Tamaca%c\nIT Support Engineer · Web Developer\nBuilt with an operations mindset.\n→ View work: #work',
+      'color:#c2410c;font-weight:700;font-size:14px',
+      'color:inherit;font-size:12px',
+    )
+  }, [])
+
   const openProject = useCallback((id: string) => {
     setActiveProject(id)
   }, [])
@@ -60,6 +69,9 @@ export default function App() {
       <main>
         <Hero reducedMotion={reducedMotion} />
         <Reveal>
+          <Differentiator />
+        </Reveal>
+        <Reveal>
           <SelectedWork onOpen={openProject} />
         </Reveal>
         <Reveal>
@@ -68,9 +80,6 @@ export default function App() {
             onSelectSkill={setSelectedSkill}
             onOpenProject={openProject}
           />
-        </Reveal>
-        <Reveal>
-          <Differentiator />
         </Reveal>
         <Reveal>
           <Experience />

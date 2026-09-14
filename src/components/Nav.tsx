@@ -84,7 +84,7 @@ export function Nav({ preference, onCycleTheme, onOpenCommand }: Props) {
             </a>
           ))}
           <a href={site.cvPath} onClick={() => setOpen(false)}>
-            Download CV
+            View Resume
           </a>
           <button type="button" className="btn btn-ghost" onClick={onOpenCommand}>
             Search

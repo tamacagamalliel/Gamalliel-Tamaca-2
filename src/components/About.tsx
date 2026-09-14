@@ -55,7 +55,7 @@ export function ResumeSnapshot() {
             The short version.
           </h2>
           <p className="section-lede">
-            A compact companion to the full CV — then download the complete document.
+            A compact companion to the full resume — then open the printable CV.
           </p>
         </div>
         <div className="snapshot-grid">
@@ -86,10 +86,10 @@ export function ResumeSnapshot() {
         </div>
         <div className="project-actions" style={{ marginTop: '1.25rem' }}>
           <a className="btn btn-primary" href={site.cvPath}>
-            Download CV
-          </a>
-          <a className="btn btn-ghost" href={site.cvPath}>
             View Resume
+          </a>
+          <a className="btn btn-ghost" href={`mailto:${site.email}`}>
+            Contact
           </a>
         </div>
       </div>

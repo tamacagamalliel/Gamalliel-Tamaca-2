@@ -14,11 +14,12 @@ export function SelectedWork({ onOpen }: Props) {
       <div className="section-head">
         <p className="section-kicker">Selected Work</p>
         <h2 className="section-title" id="work-title">
-          Projects that prove the craft.
+          Selected work that proves the craft.
         </h2>
         <p className="section-lede">
-          Real websites and internal tooling — not fictional case studies. Open a project to read the
-          problem, approach, and what actually shipped.
+          A selection of websites, systems, and experiments I&apos;ve designed and developed — real
+          client work, professional branding, experimental interfaces, and confidential internal
+          tooling.
         </p>
       </div>
 
@@ -60,7 +61,7 @@ export function SelectedWork({ onOpen }: Props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Live Website
+                View Live Site →
               </a>
             ) : null}
           </div>

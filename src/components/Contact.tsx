@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { contactIntents, portfolioStack, site } from '../data/content'
+import { contactCopy, contactIntents, portfolioStack, site } from '../data/content'
 
 type IntentId = (typeof contactIntents)[number]['id']
 
@@ -21,12 +21,9 @@ export function Contact() {
         <div className="section-head">
           <p className="section-kicker">Contact</p>
           <h2 className="section-title" id="contact-title">
-            Have something worth building?
+            {contactCopy.headline}
           </h2>
-          <p className="section-lede">
-            Pick a context, then reach out directly. No fake “message sent” forms — just real
-            channels.
-          </p>
+          <p className="section-lede">{contactCopy.lede}</p>
         </div>
 
         <div className="intent-row" role="group" aria-label="Contact intent">
@@ -58,7 +55,7 @@ export function Contact() {
             </a>
           ) : null}
           <a className="btn btn-soft" href={site.cvPath}>
-            Download CV
+            View Resume
           </a>
         </div>
 
@@ -157,6 +154,9 @@ export function Footer() {
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} {site.name}</span>
+        <span className="footer-credit">
+          Designed &amp; developed by {site.name} · Hosted on Cloudflare Pages
+        </span>
         <div className="built-with">
           <span>Built with</span>
           {portfolioStack.map((tech) => (

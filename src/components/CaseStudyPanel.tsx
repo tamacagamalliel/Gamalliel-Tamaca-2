@@ -65,11 +65,11 @@ export function CaseStudyPanel({ project, onClose }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Live Website
+                  View Live Site →
                 </a>
               ) : (
                 <span className="btn btn-ghost" aria-disabled="true">
-                  Private Project
+                  Confidential — No public link
                 </span>
               )}
             </div>
@@ -84,17 +84,17 @@ export function CaseStudyPanel({ project, onClose }: Props) {
 
           <div className="case-grid">
             <Block title="Overview" text={project.overview} />
+            <Block title="The Challenge" text={project.problem} />
             <Block title="Context" text={project.context} />
-            <Block title="Problem" text={project.problem} />
             <Block title="Approach" text={project.approach} />
+            <Block title="What I Built" text={project.development} />
             <Block title="Design" text={project.design} />
-            <Block title="Development" text={project.development} />
             <Block title="Challenges" text={project.challenges} />
             <Block title="Outcome" text={project.outcome} />
           </div>
 
           <div className="case-block">
-            <h3>My role</h3>
+            <h3>My Role</h3>
             <p>{project.role}</p>
           </div>
           <div className="case-block">
@@ -102,7 +102,7 @@ export function CaseStudyPanel({ project, onClose }: Props) {
             <p>{project.focus}</p>
           </div>
           <div className="case-block">
-            <h3>Built with</h3>
+            <h3>Technology / Tools</h3>
             <div className="project-tech">
               {project.tech.map((t) => (
                 <span className="tag" key={t}>
@@ -112,16 +112,24 @@ export function CaseStudyPanel({ project, onClose }: Props) {
             </div>
           </div>
           <div className="case-block">
-            <h3>What shipped</h3>
+            <h3>What Shipped</h3>
             <ul>
               {project.features.map((f) => (
                 <li key={f}>{f}</li>
               ))}
             </ul>
           </div>
-          {project.architecture && (
+          <div className="case-block">
+            <h3>What This Demonstrates</h3>
+            <ul>
+              {project.demonstrates.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          {project.architecture ? (
             <div className="case-block">
-              <h3>How it works</h3>
+              <h3>How It Works</h3>
               <p style={{ marginBottom: '0.75rem' }}>{project.architecture.label}</p>
               <div className="arch-flow">
                 {project.architecture.steps.map((step, i) => (
@@ -134,7 +142,7 @@ export function CaseStudyPanel({ project, onClose }: Props) {
                 ))}
               </div>
             </div>
-          )}
+          ) : null}
           <div className="case-block">
             <h3>Reflection</h3>
             <p>{project.reflection}</p>

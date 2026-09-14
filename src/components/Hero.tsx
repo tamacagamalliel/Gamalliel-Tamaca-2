@@ -1,4 +1,4 @@
-import { hero, site } from '../data/content'
+import { availability, hero, site } from '../data/content'
 import { WorkShowcase } from './WorkShowcase'
 
 type Props = {
@@ -13,7 +13,7 @@ export function Hero({ reducedMotion }: Props) {
           <img
             className="hero-photo"
             src="/profile.jpg"
-            alt="Gamalliel Tamaca"
+            alt="Gamalliel Tamaca, IT Support Engineer and Web Developer"
             width={88}
             height={88}
             decoding="async"
@@ -21,6 +21,12 @@ export function Hero({ reducedMotion }: Props) {
           <div>
             <p className="hero-label">{hero.label}</p>
             <p className="hero-photo-caption">Quezon City · IT Ops + Web</p>
+            {availability.open ? (
+              <p className="availability" title={availability.detail}>
+                <span className="availability-dot" aria-hidden="true" />
+                <span>{availability.label}</span>
+              </p>
+            ) : null}
           </div>
         </div>
         <h1 className="hero-title">
@@ -33,7 +39,7 @@ export function Hero({ reducedMotion }: Props) {
             View My Work
           </a>
           <a className="btn btn-ghost" href={site.cvPath}>
-            Download CV
+            View Resume
           </a>
         </div>
         <div className="hero-secondary">
@@ -42,7 +48,7 @@ export function Hero({ reducedMotion }: Props) {
               LinkedIn
             </a>
           ) : null}
-          <a href={`mailto:${site.email}`}>Contact</a>
+          <a href="#contact">Contact</a>
           <a href="#experience">Experience</a>
         </div>
         <dl className="hero-meta">
@@ -55,6 +61,9 @@ export function Hero({ reducedMotion }: Props) {
             <dd>IT Ops + Web</dd>
           </div>
         </dl>
+        {availability.open ? (
+          <p className="availability-detail">{availability.detail}</p>
+        ) : null}
       </div>
       <WorkShowcase reducedMotion={reducedMotion} />
     </header>

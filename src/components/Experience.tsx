@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { differentiator, experience } from '../data/content'
+import { differentiator, experience, experiencePath } from '../data/content'
 
 export function Differentiator() {
   return (
@@ -12,13 +12,23 @@ export function Differentiator() {
           </h2>
           <p className="section-lede">{differentiator.body}</p>
         </div>
-        <div className="diff-points">
-          {differentiator.points.map((point) => (
-            <div className="diff-point" key={point.title}>
-              <h3>{point.title}</h3>
-              <p>{point.text}</p>
-            </div>
-          ))}
+        <div className="diff-stack">
+          <div className="diff-pillars" aria-label="Capability pillars">
+            {differentiator.pillars.map((pillar) => (
+              <div className="diff-pillar" key={pillar.title}>
+                <h3>{pillar.title}</h3>
+                <p>{pillar.text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="diff-points">
+            {differentiator.points.map((point) => (
+              <div className="diff-point" key={point.title}>
+                <h3>{point.title}</h3>
+                <p>{point.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -34,13 +44,26 @@ export function Experience() {
         <div className="section-head">
           <p className="section-kicker">Experience</p>
           <h2 className="section-title" id="exp-title">
-            A path through support into systems.
+            Support → IT → Systems → Development
           </h2>
           <p className="section-lede">
-            Expand a role for environment, responsibilities, tools, and contributions — with Netbank
-            highlighted as IT Support Engineering plus full-stack work inside IT Operations.
+            A career that expanded from user support into technical support, IT operations, systems,
+            and development. Expand a role for environment, responsibilities, tools, and
+            contributions — with Netbank highlighted for IT Support Engineering plus full-stack work
+            inside IT Operations.
           </p>
         </div>
+
+        <ol className="exp-path" aria-label="Career progression">
+          {experiencePath.map((step, index) => (
+            <li key={step}>
+              <span>{step}</span>
+              {index < experiencePath.length - 1 ? (
+                <i aria-hidden="true">→</i>
+              ) : null}
+            </li>
+          ))}
+        </ol>
 
         <div className="timeline">
           {experience.map((role) => {

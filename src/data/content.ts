@@ -2,9 +2,9 @@ export type ThemePreference = 'light' | 'dark' | 'system'
 
 export const site = {
   name: 'Gamalliel Tamaca',
-  title: 'Gamalliel Tamaca — IT Support Engineer · Web Developer',
+  title: 'Gamalliel Tamaca — IT Support Engineer & Web Developer',
   description:
-    'IT Support Engineer and Web Developer building practical digital experiences, dashboards, and systems — with real-world IT operations experience.',
+    'IT Support Engineer and Web Developer building websites, dashboards, internal tools, and systems — with real-world IT operations, cloud, and automation experience.',
   url: 'https://gamalliel-tamaca.pages.dev',
   email: 'tamacagamalliel@gmail.com',
   phone: '+63 950 859 7405',
@@ -14,11 +14,18 @@ export const site = {
   cvPath: '/resume',
 } as const
 
+/** Easy to flip later without hunting through components */
+export const availability = {
+  open: true,
+  label: 'Open to opportunities',
+  detail: 'IT Support · Technical Support · Web Development · Freelance Projects',
+} as const
+
 export const hero = {
   label: 'GAMALLIEL TAMACA',
   roleLines: ['IT Support Engineer', '& Web Developer'],
   statement:
-    'I build practical digital experiences, web applications, dashboards, and systems — combining frontend development with real-world IT operations experience.',
+    'I build websites, systems, and digital tools that turn ideas into usable products — with an IT operations mindset behind every interface.',
 } as const
 
 export type SkillId =
@@ -107,6 +114,7 @@ export type Project = {
   challenges: string
   outcome: string
   reflection: string
+  demonstrates: string[]
   architecture?: { label: string; steps: string[] }
   features: string[]
   previewTone: 'warm' | 'cool' | 'ink' | 'system'
@@ -117,11 +125,11 @@ export const projects: Project[] = [
     id: 'trends-themes',
     number: '01',
     title: 'Trends & Themes',
-    category: 'Business Website · Event Design Platform',
+    category: 'Client Website · Event Organizer / Event Design',
     status: 'live',
     featured: true,
     oneLiner:
-      'A credible digital presence for a local event-design business — services, work, consultation, and contact in one conversion-focused experience.',
+      'A real client business website for an event organizer and designer — services, work, consultation, and contact in one conversion-focused experience.',
     role: 'Web Developer · Design & Frontend',
     focus: 'Business websites, visual storytelling, conversion-focused UX',
     tech: ['TypeScript', 'HTML / CSS', 'Responsive UI', 'Cloudflare Pages'],
@@ -129,7 +137,7 @@ export const projects: Project[] = [
     liveUrl: 'https://trends-and-themes.pages.dev/',
     year: '2025',
     overview:
-      'A business website for Trends and Themes, an event organizer and designer based in Carigara, Leyte. The site presents services, a visual showroom of work, a consultation path, FAQs, and clear contact channels.',
+      'A professional website created for Trends and Themes, an event organizer and designer, to showcase services, past work, and give potential clients a direct way to inquire or book a consultation.',
     context:
       'Built for a real local business that needed more than a social-media presence — a site that could communicate taste, trust, and availability to people planning celebrations.',
     problem:
@@ -146,6 +154,14 @@ export const projects: Project[] = [
       'A live business website that presents Trends & Themes as a professional event-design practice with services, work showcase, consultation booking, inquiries, FAQs, and social/contact flows.',
     reflection:
       'Client-facing sites succeed when they feel personal and operational at once. Clarity of services and contact paths matters as much as visual polish.',
+    demonstrates: [
+      'Client requirements gathering',
+      'UI / UX for a real business',
+      'Responsive development',
+      'Business-focused web design',
+      'Conversion-oriented thinking',
+      'Lead generation / consultation flow',
+    ],
     features: [
       'Service presentation',
       'Work / gallery showroom',
@@ -188,6 +204,13 @@ export const projects: Project[] = [
       'A live professional portfolio that positions Ashanty as an Accounting Specialist and makes experience, tools, education, and contact easy to scan.',
     reflection:
       'Building for non-tech professionals is a product skill: the interface should speak their language, not mine.',
+    demonstrates: [
+      'Personal branding websites',
+      'Information architecture',
+      'Professional content hierarchy',
+      'Responsive web design',
+      'Designing for non-technical professionals',
+    ],
     features: [
       'Professional positioning',
       'Experience & expertise presentation',
@@ -201,20 +224,20 @@ export const projects: Project[] = [
     id: 'instag',
     number: '03',
     title: 'Experimental Portfolio',
-    category: 'Interactive Portfolio Concept',
+    category: 'Experimental Portfolio Interface',
     status: 'live',
     oneLiner:
-      'An exploration of how a portfolio can behave more like a digital product than a traditional resume.',
+      'A social-inspired portfolio experiment — proving the interface itself can be part of the work, not just a container for it.',
     role: 'Designer · Frontend Experimentation',
-    focus: 'UI experimentation, unconventional navigation, personal branding',
+    focus: 'Interactive UI, social-inspired UX, component-driven frontend',
     tech: ['Frontend', 'Interactive UI', 'Responsive Design', 'Cloudflare Pages'],
     skillIds: ['frontend', 'uiux', 'responsive', 'javascript', 'typescript', 'cloudflare'],
     liveUrl: 'https://gamalliel-instag.pages.dev/',
     year: '2025',
     overview:
-      'An experimental personal portfolio with a social-inspired identity — profile-style structure spanning Projects, Experience, Skills, About, Certifications, Education, and Contact.',
+      'An experimental personal portfolio with a social-inspired identity — profile-style structure spanning Projects, Experience, Skills, About, Certifications, Education, and Contact. Intentionally built as a product-like interface, not a template.',
     context:
-      'A self-initiated experiment to test interaction patterns and personal branding beyond a linear resume layout.',
+      'A self-initiated experiment to test interaction patterns and personal branding beyond a linear resume layout — and to show frontend craft beyond standard portfolio templates.',
     problem:
       'Traditional portfolios can feel static. What happens if the portfolio itself behaves like a product people explore, not a document they skim?',
     approach:
@@ -229,6 +252,13 @@ export const projects: Project[] = [
       'A live experimental portfolio that demonstrates frontend creativity and product-like interaction design.',
     reflection:
       'Experiments teach constraints. Creativity in a portfolio only works when the visitor can still answer: who is this person, and what can they build?',
+    demonstrates: [
+      'Interactive UI development',
+      'Social-inspired UX adaptation',
+      'Component-driven frontend',
+      'Interaction design',
+      'Responsive experimental interfaces',
+    ],
     features: [
       'Social-inspired interaction patterns',
       'Profile-style information architecture',
@@ -242,21 +272,21 @@ export const projects: Project[] = [
     id: 'netbank-dashboard',
     number: '04',
     title: 'Netbank Transaction Dashboard',
-    category: 'Internal Tooling · Dashboard',
+    category: 'Private Enterprise Dashboard · Internal IT Operations',
     status: 'private',
     oneLiner:
-      'Internal transaction monitoring and reporting dashboard developed as part of IT Operations / full-stack development work.',
+      'Confidential internal dashboard for monitoring and visualizing outgoing and incoming transaction data — built within IT Operations.',
     role: 'Full Stack Developer within IT Operations',
     focus: 'Dashboards, data visualization, internal operations tooling',
     tech: ['Dashboard UI', 'Data Processing', 'Cloudflare', 'SQL / Reporting'],
     skillIds: ['dashboard', 'frontend', 'backend', 'databases', 'sql', 'apis', 'cloudflare', 'aws', 'production'],
     year: '2025–2026',
     overview:
-      'An internal transaction monitoring and reporting dashboard built to support outgoing and incoming transaction visibility, operational reporting, and day-to-day IT operations needs.',
+      'A dashboard developed within IT Operations for monitoring and visualizing outgoing and incoming transaction data. Live production access and confidential implementation details are not publicly available.',
     context:
       'Developed inside a regulated banking IT environment where production support, access control, and reporting accuracy matter as much as the interface.',
     problem:
-      'Operations teams needed clearer visibility into transaction activity and reporting — including work covering 2025 and 1H 2026 transaction reporting — without relying only on ad-hoc queries and scattered tools.',
+      'Operations teams needed clearer visibility into transaction activity and reporting — without relying only on ad-hoc queries and scattered tools.',
     approach:
       'Treat the dashboard as internal product: prioritize monitoring, reporting clarity, and operational workflows over decorative UI. Align with production support realities.',
     design:
@@ -264,11 +294,18 @@ export const projects: Project[] = [
     development:
       'Dashboard visualization, data processing for outgoing/incoming transaction monitoring, and reporting support. Built with production-oriented constraints and internal tooling standards.',
     challenges:
-      'Working within confidentiality, compliance, and production constraints. The public case study intentionally stays high-level — no credentials, endpoints, or sensitive financial detail.',
+      'Working within confidentiality, compliance, and production constraints. This public case study stays high-level by design — no credentials, endpoints, internal URLs, or sensitive financial detail.',
     outcome:
-      'An internal dashboard used to support transaction monitoring, reporting, and IT operations workflows. Details remain private by design.',
+      'An internal dashboard used to support transaction monitoring, reporting, and IT operations workflows. Details remain private because the project contains confidential internal systems and production information.',
     reflection:
       'Internal tools reveal how software actually lives in production. Building for operators changed how I think about reliability, clarity, and escalation paths.',
+    demonstrates: [
+      'Transaction monitoring concepts',
+      'Data visualization for operators',
+      'Internal tooling / dashboard development',
+      'Full-stack work within IT Operations',
+      'Production-oriented systems thinking',
+    ],
     architecture: {
       label: 'High-level flow (non-confidential)',
       steps: ['Operator', 'Dashboard UI', 'Internal APIs / data layer', 'Reporting views', 'Operations use'],
@@ -278,7 +315,7 @@ export const projects: Project[] = [
       'Incoming transaction monitoring',
       'Reporting & visualization',
       'Data processing for operations',
-      '2025 + 1H 2026 transaction reporting support',
+      'Operational reporting support',
     ],
     previewTone: 'system',
   },
@@ -391,6 +428,24 @@ export const experience: Experience[] = [
 export const differentiator = {
   headline: 'I build with an operations mindset.',
   body: 'My background in IT support means I don’t only think about how an interface looks. I think about how systems behave, how users interact with them, how issues are diagnosed, and how workflows can be improved.',
+  pillars: [
+    {
+      title: 'Build',
+      text: 'Websites · Dashboards · Internal Tools · Web Applications',
+    },
+    {
+      title: 'Support',
+      text: 'IT Troubleshooting · Incident Management · User Support · Access Management',
+    },
+    {
+      title: 'Connect',
+      text: 'APIs · Webhooks · Integrations · Automation',
+    },
+    {
+      title: 'Operate',
+      text: 'Cloud Infrastructure · Monitoring · Production Support · Documentation',
+    },
+  ],
   points: [
     {
       title: 'Support-rooted product sense',
@@ -405,6 +460,18 @@ export const differentiator = {
       text: 'I care about what happens after deploy: health checks, tickets, and whether the tool still helps operators.',
     },
   ],
+} as const
+
+export const experiencePath = [
+  'User / Customer Support',
+  'IT Helpdesk',
+  'IT Support Engineer',
+  'Systems · Development',
+] as const
+
+export const contactCopy = {
+  headline: "Let's build something.",
+  lede: "Have a project, an opportunity, or an idea you'd like to turn into a website or system? Let's talk — no fake “message sent” forms, just real channels.",
 } as const
 
 export const about = {
